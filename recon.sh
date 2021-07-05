@@ -30,14 +30,12 @@ fi
 echo "============================================="
 echo "[+] Harvesting subdomains with assetfinder..."
 echo "============================================="
-assetfinder $1 | anew $url/subdomains/all-domains.txt
+assetfinder -subs-only $1 | anew $url/subdomains/all-domains.txt
 
 #echo "================================="
 #echo "[+] Checking domains with amass.."
 #echo "================================="
-#amass enum -d $1 -passive | anew $url/subdomains/amass-subdomains.txt
-#cat $url/subdomains/amass-subdomains.txt | grep $1 | anew amass-final.txt
-#rm -f $url/subdomains/amass-subdomains.txt
+#amass enum -d $1 -passive -v | anew $url/subdomains/all-domains.txt
 
 echo "==========================================="
 echo "[+] Enumerating subdomains with Sublist3r.."
